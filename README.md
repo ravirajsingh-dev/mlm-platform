@@ -18,6 +18,12 @@ Multi-level marketing platform built for 100K+ users, covering registration, gen
 - Admin dashboard for members, settings, and reports
 - Redis/BullMQ workers so heavy commission jobs stay off the request path
 
+## Architecture
+
+- HTTP requests stay on the Express API
+- Commission and payout jobs go to Redis/BullMQ workers
+- MongoDB stores members, wallets, and tree placement
+
 ## Local setup
 
 1. Copy `.env.example` to `.env` and fill in MongoDB, Redis, JWT, email, and object-storage values.
