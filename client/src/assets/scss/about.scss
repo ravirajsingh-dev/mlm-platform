@@ -1,0 +1,100 @@
+@use "./variables" as *;
+
+/* ===================================
+   EDITORIAL ABOUT SECTION
+=================================== */
+// .about-editorial {
+//   background: $dark-maroon;
+// }
+
+/* ===================================
+   HEADER
+=================================== */
+.about-editorial__header {
+  max-width: 780px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.about-editorial__tag {
+  display: inline-block;
+  color: $golden;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.about-editorial__title {
+  color: $golden;
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+
+  span {
+    color: rgba($golden, 0.7);
+    font-weight: 500;
+  }
+}
+
+.about-editorial__intro {
+  color: rgba($golden, 0.65);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ===================================
+   FORCE ONE ROW
+=================================== */
+.about-editorial__row {
+  flex-wrap: nowrap;
+
+  > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* ===================================
+   TEXT BLOCKS
+=================================== */
+.about-editorial__block {
+  padding: 0 50px;
+  position: relative;
+
+  h3 {
+    color: $golden;
+    font-size: 24px;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    color: rgba($golden, 0.65);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+}
+
+/* Vertical divider (KEY WOW ELEMENT) */
+.about-editorial__block--right {
+  border-left: 1px solid rgba($golden, 0.25);
+}
+
+/* ===================================
+   MOBILE – STILL ONE ROW
+=================================== */
+@media (max-width: 576px) {
+  .about-editorial__block {
+    padding: 0 18px;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+}

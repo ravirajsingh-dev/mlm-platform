@@ -1,0 +1,2 @@
+export const MIN_WITHDRAWAL_AMOUNT = 100;
+export const MAX_WITHDRAWAL_AMOUNT = 50000;

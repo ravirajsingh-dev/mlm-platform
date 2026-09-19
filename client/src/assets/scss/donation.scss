@@ -1,0 +1,291 @@
+@use "./variables" as *;
+
+/* ===================================
+   DONATION SECTION
+=================================== */
+
+.donation-section {
+  padding: 80px 0;
+  background: $dark-maroon;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+/* ===================================
+   HEADER
+=================================== */
+.donation-section__header {
+  max-width: 780px;
+  margin: 0 auto 60px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.donation-section__tag {
+  display: inline-block;
+  color: $golden;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.donation-section__title {
+  color: $golden;
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+
+  span {
+    color: rgba($golden, 0.7);
+    font-weight: 500;
+  }
+}
+
+.donation-section__intro {
+  color: rgba($golden, 0.65);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+.donation-section__subtitle {
+  color: $golden;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===================================
+   BUTTONS GRID
+=================================== */
+.donation-section__buttons {
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.donation-button {
+  background: linear-gradient(135deg, $golden 0%, rgba($golden, 0.85) 100%);
+  border: 2px solid $golden;
+  color: $dark-maroon;
+  padding: 20px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: linear-gradient(135deg, $golden 0%, rgba($golden, 0.9) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba($golden, 0.3);
+    color: $dark-maroon;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+.donation-button__amount {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.donation-button__people {
+  font-size: 13px;
+  opacity: 0.9;
+  text-transform: lowercase;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+/* ===================================
+   BANK DONATION
+=================================== */
+.donation-section__bank {
+  padding-top: 40px;
+  border-top: 1px solid rgba($golden, 0.2);
+}
+
+.donation-bank-info {
+  text-align: center;
+  padding: 30px;
+  background: rgba($golden, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba($golden, 0.2);
+
+  p {
+    color: rgba($golden, 0.75);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+}
+
+.donation-bank-button {
+  background: transparent;
+  border: 2px solid $golden;
+  color: $golden;
+  padding: 12px 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $golden;
+    color: $dark-maroon;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba($golden, 0.3);
+  }
+}
+
+/* ===================================
+   MODAL STYLES
+=================================== */
+.donation-modal {
+  .modal-header {
+    background: $dark-maroon;
+    color: $golden;
+    border-bottom: 1px solid rgba($golden, 0.2);
+
+    .modal-title {
+      color: $golden;
+      font-weight: 600;
+    }
+
+    .btn-close {
+      filter: invert(1) brightness(2);
+    }
+  }
+
+  .modal-body {
+    background: $dark-maroon;
+    color: rgba($golden, 0.9);
+
+    h5 {
+      color: $golden;
+      font-weight: 600;
+    }
+
+    .bg-light {
+      background: rgba($golden, 0.1) !important;
+      border: 1px solid rgba($golden, 0.2);
+      color: rgba($golden, 0.9);
+
+      strong {
+        color: $golden;
+      }
+    }
+
+    .form-label {
+      color: rgba($golden, 0.9);
+    }
+
+    .form-control {
+      background: rgba($golden, 0.1);
+      border: 1px solid rgba($golden, 0.3);
+      color: rgba($golden, 0.9);
+
+      &:focus {
+        background: rgba($golden, 0.15);
+        border-color: $golden;
+        color: rgba($golden, 1);
+        box-shadow: 0 0 0 0.2rem rgba($golden, 0.25);
+      }
+
+      &::placeholder {
+        color: rgba($golden, 0.5);
+      }
+    }
+
+    .btn-primary {
+      background: $golden;
+      border-color: $golden;
+      color: $dark-maroon;
+      font-weight: 600;
+
+      &:hover {
+        background: $golden;
+        border-color: $golden;
+        color: $dark-maroon;
+      }
+
+      &:disabled {
+        background: rgba($golden, 0.5);
+        border-color: rgba($golden, 0.5);
+        color: rgba($dark-maroon, 0.5);
+      }
+    }
+
+    img {
+      border: 2px solid rgba($golden, 0.3);
+      border-radius: 8px;
+      padding: 10px;
+      background: rgba($golden, 0.05);
+    }
+  }
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 991px) {
+  .donation-section__buttons {
+    .col-lg-2\.4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .donation-section__buttons {
+    .col-lg-2\.4,
+    .col-md-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  .donation-button {
+    min-height: 80px;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .donation-section__buttons {
+    .col-lg-2\.4,
+    .col-md-4,
+    .col-sm-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .donation-bank-info {
+    padding: 20px;
+  }
+}

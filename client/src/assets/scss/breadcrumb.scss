@@ -1,0 +1,137 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+//page-title-area
+.page-title-area {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $dark-maroon;
+  border-bottom: 2px solid $golden;
+
+  &::before {
+    content: "";
+    opacity: 0.651;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    // min-height: 590px;
+    @media #{$xs} {
+      // min-height: 440px;
+    }
+    @media #{$sm} {
+      // min-height: 440px;
+    }
+  }
+}
+.page-title {
+  @media #{$xs} {
+    // padding-top: 150px;
+  }
+  @media #{$sm} {
+    // padding-top: 150px;
+  }
+  & h2 {
+    color: $golden;
+    font-size: 50px;
+    line-height: 1.5;
+    font-family: $cerebri-semi;
+    // margin-bottom: 20px;
+    @media #{$md} {
+      font-size: 40px;
+    }
+    @media #{$xs} {
+      font-size: 32px;
+    }
+    @media #{$sm} {
+      font-size: 32px;
+    }
+  }
+}
+.breadcrumb-list {
+  display: flex;
+  justify-content: center;
+
+  & ul {
+    & li {
+      display: inline-block;
+      color: $theme-color;
+      font-size: 24px;
+      font-family: $cerebri-medium;
+      position: relative;
+      padding: 0 20px;
+      @media #{$xs} {
+        font-size: 20px;
+      }
+      @media #{$sm} {
+        font-size: 20px;
+      }
+
+      // Add double separator after each <li> except the last one
+      &:not(:last-child)::after {
+        content: "||"; // Add double vertical bars
+        color: $theme-color; // Match the color
+        position: absolute;
+        right: -10px; // Adjust position to center between items
+        top: 50%;
+        transform: translateY(-50%); // Vertically center the separator
+        font-size: 24px; // Match font size
+        font-family: $cerebri-medium; // Match font family
+        padding: 0 5px; // Add spacing around the separator
+        @media #{$xs} {
+          font-size: 20px;
+        }
+        @media #{$sm} {
+          font-size: 20px;
+        }
+      }
+
+      & a {
+        color: $theme-color;
+        font-size: 24px;
+        font-family: $cerebri-medium;
+        display: inline-block;
+        @media #{$xs} {
+          font-size: 20px;
+        }
+        @media #{$sm} {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.back-btn {
+  color: White !important;
+  background: $black;
+  font: 600 14px/1 "cerebri_sanssemibold";
+  padding: 12px 12px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid $golden;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: $golden !important;
+    background: $dark-maroon;
+    border: 1px solid $golden;
+  }
+  &:active {
+    color: $golden !important;
+    background: $dark-maroon !important;
+    border: 1px solid $golden !important;
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    color: $white !important;
+    background: #a0a0a0 !important;
+    cursor: not-allowed !important;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}

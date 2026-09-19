@@ -1,0 +1,104 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+// Logout Modal Styling
+.logout-modal {
+  .logout-modal-header {
+    background-color: $black;
+    text-align: center;
+    border-bottom: none;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logout-modal-title {
+    color: $theme-color-light-2;
+    font-size: 1.8rem;
+  }
+
+  .logout-icon {
+    color: $theme-color-light-3;
+    font-size: 2.5rem;
+  }
+
+  .logout-modal-body {
+    color: $heading-text-color;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: $dark-maroon;
+  }
+
+  .logout-modal-footer {
+    background-color: $black;
+    border-top: none;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logout-cancel-btn {
+    background-color: $green-dark-3;
+    color: $white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $green-light-2;
+    }
+  }
+
+  .logout-confirm-btn {
+    background-color: $dark-maroon;
+    color: $golden;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $dark-maroon;
+    }
+  }
+}
+
+// Sidebar Auth (Login/Logout) Section
+.sidebar-auth {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: $theme-hover-color;
+  border-top: 1px solid $hr-border-color;
+
+  .logout-btn,
+  .theme_btn {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  .logout-btn {
+    background-color: $green-dark-3;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $green-light-2;
+    }
+  }
+
+  .theme_btn {
+    background-color: $theme-color;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $theme-color-dark-1;
+    }
+  }
+}

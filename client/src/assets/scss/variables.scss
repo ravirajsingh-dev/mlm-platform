@@ -1,0 +1,79 @@
+// Font Family
+$futurabook: "futurabook";
+$futura-medium: "futuramedium";
+$futura_hv: "futura_hv_btheavy";
+$cerebri-light: "cerebri_sanslight";
+$cerebri-regular: "cerebri_sansregular";
+$cerebri-medium: "cerebri_sansmedium";
+$cerebri-semi: "cerebri_sanssemibold";
+$cerebri-bold: "cerebri_sansbold";
+
+// Colors ---------------
+
+$golden: #1a5a0d;
+$green-light-2: #267814;
+$green-light-3: #33961f;
+$green-light-4: #4cb32d;
+$green-light-5: #66cc3d;
+
+$green-dark-1: #072d00;
+$green-dark-2: #052200;
+$green-dark-3: #031700;
+$green-dark-4: #010d00;
+$green-dark-5: #000500;
+
+$theme-color-light-1: #7aad2c;
+$theme-color-light-2: #8ac43a;
+$theme-color-light-3: #9bdb48;
+$theme-color-light-4: #abf256;
+$theme-color-light-5: #bbff66;
+
+$theme-color-dark-1: #5a821b;
+$theme-color-dark-2: #4a6e17;
+$theme-color-dark-3: #3a5a13;
+$theme-color-dark-4: #2a460f;
+$theme-color-dark-5: #1a320b;
+
+$theme-hover-color: #f5fbeb;
+$theme-heading-color: #547b11;
+
+// $darkest-maroon: #0f0200;
+$darkest-maroon: #110908;
+$dark-maroon: #190100;
+
+$maroon: #590000;
+$light-maroon: #2a0f0d;
+$golden: #ffe082;
+
+$white: #ffffff;
+$black: #000000;
+$green: #ffe082;
+$green-soft: #0b3300;
+$grey: #f4f5f0;
+$bg-gray: #f2f4f5;
+$invalid-color: #dc3545;
+
+$theme-color: #ffe082;
+$body-text-color: #777777;
+$body-text-color2: #6a6a6a;
+$body-text-color3: #6d6d6d;
+$hr-border-color: #ffe082;
+$hr-border-color2: #e7e7e7;
+
+$heading-text-color: #ffe082;
+$underline-mutted-color: #ddd;
+$EP-color: #ffe082;
+// Heading Color
+$heding: #ffe082;
+
+// Soft color
+$black-soft: #7e7e7e;
+
+// Responsive Variables
+$xxl2: "only screen and (min-width: 1601px) and (max-width: 1920px)";
+$xxl: "only screen and (min-width: 1601px) and (max-width: 1900px)";
+$laptop: "only screen and (min-width: 1200px) and (max-width: 1600px)";
+$lg: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$md: "only screen and (min-width: 768px) and (max-width: 991px)";
+$xs: "(max-width: 767px)";
+$sm: "only screen and (min-width: 576px) and (max-width: 767px)";

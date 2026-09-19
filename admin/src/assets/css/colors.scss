@@ -1,0 +1,44 @@
+$primary-color: #295db2;
+// $primary-color: #007873;
+$secondary-color: #ee5e3b;
+$text-color: #495057;
+
+$orange-color: #ff9901;
+$light-orange-color: #ffa82e;
+$gradiant-orange-color: linear-gradient(
+  90deg,
+  rgb(255, 152, 1) 0%,
+  rgb(230, 116, 1) 100%
+);
+$gradiant-blue-color: linear-gradient(180deg, #ad85ff 0%, #4a82f5 100%);
+$gradiant-yellow-color: linear-gradient(180deg, #ffd058 0%, #fff 100%);
+$gradiant-green-color: linear-gradient(90deg, #3faa70 0%, #47ba7c 100%);
+
+$yellow-color: #ffd058;
+$secondary-color: #feaa57;
+$box-shadow-color: #b0b0c95c;
+
+$invalid-color: #dc3545;
+
+/* $button-color: #b584ff;
+$pupple-color: #c7a2ff;
+$button-color-hover: #9c5aff;*/
+
+$button-color: #e68a00;
+$button-color-hover: #ff9900;
+
+$green-button-color: #40ad72;
+$green-button-shadow-color: #bae6b0;
+
+$red-button-color: #fa574a;
+$red-button-shadow-color: #f49d9d;
+
+$blue-button-color: #6da7f4;
+
+$violet-button-color: #b659fe;
+$violet-button-shadow-color: #b988df;
+
+$underline-mutted-color: #ddd;
+$text-mutted-color: #888;
+
+$notification-color: #ffeddc;

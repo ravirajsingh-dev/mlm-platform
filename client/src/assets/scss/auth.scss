@@ -1,0 +1,234 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// Login SCSS
+.auth-container {
+  background-color: $black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  .e2e-auth-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .user-register-data-icon {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .e2e-auth-login-card {
+      background-color: $dark-maroon;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba($green-dark-5, 0.1);
+      padding: 30px;
+      // border: 1px solid $golden;
+
+      @media #{$xs} {
+        padding: 20px;
+      }
+
+      .user-auth-heading {
+        margin-bottom: 25px;
+        text-align: center;
+
+        span {
+          font-family: $futura-medium;
+          font-size: 28px;
+          color: $golden;
+          position: relative;
+          padding-bottom: 10px;
+
+          // &:after {
+          //   content: "";
+          //   position: absolute;
+          //   bottom: 0;
+          //   left: 50%;
+          //   transform: translateX(-50%);
+          //   width: 50px;
+          //   height: 3px;
+          //   background-color: $golden;
+          // }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(
+              90deg,
+              $theme-color 0%,
+              rgba($theme-color, 0) 100%
+            );
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid $theme-color;
+          }
+        }
+      }
+
+      .registration-form {
+        .register-lable {
+          font-family: $cerebri-semi;
+          color: $golden;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+
+          &-icon {
+            margin-right: 10px;
+            color: $golden;
+          }
+        }
+
+        .form-control {
+          height: 45px;
+          border: 1px solid rgba($golden, 0.3);
+          border-radius: 5px;
+          font-family: $cerebri-regular;
+          color: $golden !important;
+          background-color: rgba($golden, 0.3);
+          transition: all 0.3s ease;
+
+          &:focus {
+            box-shadow: 0 0 0 0.25rem rgba($golden, 0.2);
+            border-color: $golden;
+            background-color: $dark-maroon;
+          }
+
+          &::placeholder {
+            color: rgba($black-soft, 0.6);
+            font-size: 14px;
+          }
+        }
+
+        .input-group-text {
+          background-color: rgba($theme-hover-color, 0.3);
+          border: 1px solid rgba($theme-color-light-5, 0.3);
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $theme-color-light-5;
+            color: $white;
+          }
+        }
+
+        .remember-me {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .form-check-input {
+            background-color: $dark-maroon;
+            border-color: $golden;
+            margin-right: 5px;
+
+            &:checked {
+              background-color: $dark-maroon;
+              border-color: $golden;
+            }
+
+            &:focus {
+              box-shadow: 0 0 0 0.25rem rgba($golden, 0.2);
+            }
+          }
+
+          .form-check-label {
+            font-family: $cerebri-regular;
+            color: $golden !important;
+            font-size: 14px;
+          }
+        }
+
+        .form-button {
+          .default-auth-button {
+            background-color: $theme-color-light-3;
+            border-color: $theme-color-light-3;
+            color: $white;
+            font-family: $cerebri-semi;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+
+            &:hover,
+            &:focus {
+              background-color: $theme-color-dark-1;
+              border-color: $theme-color-dark-1;
+              box-shadow: 0 4px 10px rgba($theme-color-dark-1, 0.3);
+            }
+          }
+
+          .already-account-button {
+            background: transparent;
+            border: none;
+            color: $theme-color-light-1;
+            font-family: $cerebri-semi;
+            padding: 0;
+            font-size: 14px;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: $theme-color-dark-1;
+              text-decoration: none;
+            }
+
+            span {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Error styles (assuming you have error styling)
+.invalid {
+  border-color: rgba(red, 0.5) !important;
+}
+
+// Responsive adjustments
+@media #{$md} {
+  .auth-container {
+    .e2e-auth-login {
+      .e2e-auth-login-card {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+@media #{$xs} {
+  .auth-container {
+    padding: 15px;
+
+    .e2e-auth-login {
+      .e2e-auth-login-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 15px;
+      }
+
+      .user-register-data-icon {
+        max-width: 150px;
+      }
+    }
+  }
+}

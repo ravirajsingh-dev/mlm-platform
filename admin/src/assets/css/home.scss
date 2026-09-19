@@ -1,0 +1,815 @@
+@use "./colors.scss" as *;
+@use "./adminCss/adminDashboardColors.scss" as *;
+@use "./adminCss/adminDashboard.scss" as *;
+@use "./landingPage.scss" as *;
+
+.linkTag {
+  text-decoration: none;
+}
+.refreshIcon {
+  width: 7%;
+  cursor: pointer;
+}
+.fs-12 {
+  font-size: 12px;
+}
+
+.invalid {
+  border: 1px solid $invalid-color !important;
+}
+
+// Spinner
+.spinner-sec {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 60px;
+  aspect-ratio: 1;
+  display: grid;
+}
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  --c: no-repeat radial-gradient(farthest-side, #00aaff 92%, #0000);
+
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 13px 13px;
+  animation: l12 1s infinite;
+}
+.spinner::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 10px 10px;
+  animation-timing-function: linear;
+}
+
+@keyframes l12 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+// Button Spinner Start
+.loader {
+  font-size: 20px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  margin-right: 20px;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
+      -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+      -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+      -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+      -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+      -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+      -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
+      -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+      -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+      -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+      -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+      -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+      -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+// Button Spinner End
+
+// Alert notification
+.alert-sec {
+  background: transparent;
+  position: fixed;
+  z-index: 999;
+  width: 450px;
+  pointer-events: none;
+}
+.hideAlert {
+  display: none;
+}
+.alert-sec-row {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.alert-box {
+  background-color: #040303cc;
+  color: white;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.alert-content {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+  word-break: normal;
+  word-wrap: break-word;
+}
+.alert-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// home header
+
+.homeHeader {
+  background: $gradiant-orange-color;
+  align-items: center;
+  color: white;
+  position: fixed;
+  width: 450px;
+  top: 0;
+  z-index: 10;
+  padding: 10px 0 10px 0;
+  .headerIcons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    div {
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      top: 0;
+      right: 58px;
+    }
+  }
+}
+
+.carousel-section {
+  padding-top: 47px;
+  img {
+    width: 100%;
+  }
+}
+
+.natification-secion {
+  background: $notification-color;
+  color: $orange-color;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 3px 0 3px 0;
+}
+
+.notification-detail-button {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  background-color: $button-color;
+  border-radius: 20px;
+  font-size: 10px;
+}
+.notification-detail-button:hover {
+  background-color: $button-color-hover;
+}
+.notification-detail-button:active {
+  background-color: $button-color-hover !important;
+}
+.home-game-category {
+  row-gap: 15px;
+  align-items: center;
+  .home-game-category-items {
+    font-size: 12px;
+    .home-game-category-image {
+      width: 70px;
+      border-radius: 50%;
+      background: $gradiant-blue-color;
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+.home-game-category-image-selected {
+  border-radius: 10% !important;
+  background: $gradiant-orange-color !important;
+}
+.home-game-category-items-selected {
+  color: $orange-color;
+  font-weight: 500;
+}
+
+// game Menu item card
+
+.menuheader {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #151515;
+}
+.lotteryBallIcon {
+  width: 7%;
+  margin-right: 8px;
+}
+.game-menu-item-card {
+  background: #f4f5f8;
+  box-shadow: 0 0.05333rem 0.21333rem $box-shadow-color;
+  height: 170px;
+  margin-bottom: 35px;
+  border-radius: 25px;
+  position: relative;
+  row-gap: 0px;
+  .game-menu-item-card-item {
+    height: 115px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    color: white;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-size: 23px;
+    font-weight: 600;
+  }
+  .game-menu-item-card-subtitle {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  .game-menu-card-image {
+    position: absolute;
+    width: 100px;
+    right: 0;
+    bottom: 105px;
+  }
+  .game-menu-item-card-bottom-image-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .game-menu-item-card-bottom-image-col {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 50%;
+        padding: 1px;
+        width: 20%;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.winningInfoSection {
+  margin-bottom: 100px;
+}
+
+// Footer
+
+.homeFooter {
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0.05333rem 0.21333rem $box-shadow-color;
+  width: 450px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-menu {
+  height: 100%;
+}
+.footer-menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+.footer-menu-promotion-items {
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 18.5px;
+}
+
+.footer-menu-items-icon {
+  width: 1.5rem;
+  margin-bottom: 2px;
+}
+.footer-menu-items-promotion-icon {
+  width: 1.5rem;
+}
+.footer-menu-items-active {
+  color: $orange-color;
+}
+
+// Dot
+.dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  margin: auto;
+}
+.red {
+  background-color: $red-button-color;
+}
+.green {
+  background-color: $green-button-color;
+}
+.violet {
+  background-color: $violet-button-color;
+}
+
+// Table
+.table {
+  text-align: center;
+  .tableHeading {
+    th {
+      background-color: $light-orange-color;
+      color: white;
+      font-weight: 600;
+    }
+    .HeadingFirst {
+      border-top-left-radius: 10px;
+    }
+    .HeadingLast {
+      border-top-right-radius: 10px;
+    }
+  }
+  td {
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .evenNumber {
+    font-weight: 700;
+    color: $red-button-color;
+    font-size: 22px;
+  }
+  .oddNumber {
+    font-weight: 700;
+    color: $green-button-color;
+    font-size: 22px;
+  }
+  .zeroNumber {
+    font-weight: 700;
+    background: linear-gradient(180deg, #fd565c 50.96%, #b659fe 50.97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 22px;
+  }
+  .fiveNumber {
+    font-weight: 700;
+    background: white;
+    background-clip: padding-box;
+    font-size: 22px;
+    color: transparent;
+    background-image: linear-gradient(180deg, #40ad72 51.48%, #b659fe 51.49%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// Drawer
+
+.bottomOffCanvas {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: auto !important;
+  width: 450px;
+  margin: auto;
+  .bg-success {
+    background: $gradiant-green-color;
+  }
+  .bg-violet {
+    background: $violet-button-color;
+  }
+  .bg-red {
+    background: $red-button-color;
+  }
+  .bg-blue {
+    background: $blue-button-color;
+  }
+  .bg-light-orange {
+    background: $light-orange-color;
+  }
+  .bg-green-violet {
+    background: linear-gradient(to bottom right, #40ad72 50%, #eb43dd 0);
+  }
+  .bg-red-violet {
+    background: linear-gradient(to bottom right, #fd565c 50%, #b658fe 0);
+  }
+
+  .bottomOffCanvasHeader {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    // background: $gradiant-green-color;
+    position: relative;
+    padding: 10px 0 10px 0;
+    gap: 10px;
+    padding-bottom: 35px;
+    margin-bottom: 20px;
+
+    .bottomOffCanvasHeaderTitle {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      .bottomOffCanvasHeaderSelectType {
+        width: 80%;
+        padding: 4px 0 4px 0;
+        border-radius: 6px;
+        display: flex;
+        gap: 10px;
+        text-align: center;
+        color: black;
+        background-color: white;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.bottomOffCanvasHeader::before,
+.bottomOffCanvasHeader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2.78667rem;
+  background-image: linear-gradient(9deg, #fff 50%, transparent 50%);
+}
+
+.bottomOffCanvasHeader::before {
+  width: 50%;
+  left: 0;
+}
+
+.bottomOffCanvasHeader::after {
+  width: 50%;
+  right: 0;
+  background-image: linear-gradient(-9deg, #fff 50%, transparent 50%);
+}
+
+.canvas-balance-count {
+  background-color: #eeeeee;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 7px 0px 7px 0;
+  font-size: 15px;
+  cursor: default;
+  color: #4d4d4d;
+}
+.canvas-balance-count-active {
+  color: white;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 7px 0px 7px 0;
+  font-size: 15px;
+  cursor: default;
+}
+.bottomOffCanvasQuanitySec {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .incDecButton {
+    text-align: center;
+    color: white;
+    cursor: default;
+  }
+
+  input {
+    width: 100%;
+    height: 25px;
+    border-radius: 0;
+    text-align: center;
+  }
+}
+.canvas-multiply-amount {
+  background-color: #eeeeee;
+  margin-right: 10px;
+  padding: 4px 0 4px 0;
+  font-size: 15px;
+  cursor: default;
+  color: #4d4d4d;
+}
+.canvas-multiply-amount-active {
+  background-color: $green-button-color;
+  color: white;
+  margin-right: 10px;
+  padding: 4px 0 4px 0;
+  font-size: 15px;
+  cursor: default;
+}
+.bottomOffCanvasCheckbox {
+  .PreSaleRules {
+    margin-right: 10px;
+    color: $orange-color;
+    // font-size: 14px;
+    cursor: default;
+    margin-left: 10px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.bottomOffCanvasCancel {
+  background-color: #25253c;
+  color: #7d7d9d;
+  text-align: center;
+  height: 100%;
+  padding: 8px 0 8px 0;
+  cursor: default;
+}
+.bottomOffCanvasSuccess {
+  cursor: default;
+  color: white;
+  text-align: center;
+  padding: 8px 0 8px 0;
+}
+
+//detail notification
+
+.detailContainer {
+  margin-top: 46px;
+  padding: 20px 30px 20px 30px;
+  .detailNotificationRow {
+    background: $notification-color;
+    padding: 13px 8px 13px 8px;
+    border-radius: 10px;
+    box-shadow: 0 0.05333rem 0.21333rem $box-shadow-color;
+    font-size: 18px;
+    img {
+      width: 7%;
+      margin-right: 10px;
+    }
+    .detailNotificationContent {
+      padding-left: 50px;
+      margin-top: 15px;
+      line-height: 1.8rem;
+      color: $text-mutted-color;
+      font-size: 15px;
+    }
+    .detailNotificationTime {
+      color: $text-mutted-color;
+      font-size: 15px;
+      border-bottom: 1px solid $underline-mutted-color;
+      margin: 15px 10px 0 10px;
+      padding-bottom: 15px;
+      padding-left: 40px;
+    }
+    .detailNotificationNoMore {
+      color: $text-mutted-color;
+      font-size: 15px;
+    }
+  }
+}
+
+// no data found
+.noDataFoundImg {
+  width: 45%;
+}
+.noDataText {
+  color: $text-mutted-color;
+}
+
+// detail marque
+
+.marquee {
+  height: 20px;
+}
+
+// modal
+.welcomeModalBody {
+  // max-height: 60vh;
+  // overflow-y: auto;
+  padding-bottom: 100px;
+  text-align: justify;
+  line-height: 20px;
+
+  font-size: 15px;
+}
+
+// winning information
+
+.winningInfoCard {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0.05333rem 0.21333rem $box-shadow-color;
+  margin-bottom: 10px;
+}
+.winningInfoCardRow {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 12px;
+
+  .winningInfoCardCol1 {
+    display: flex;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      padding: 1px;
+      width: 30%;
+      margin-right: 8px;
+    }
+  }
+  .winningInfoCardColImage {
+    display: flex;
+    align-items: center;
+    color: $text-mutted-color;
+    img {
+      border-radius: 10px;
+      background: $gradiant-orange-color;
+      padding: 1px;
+      width: 30%;
+      margin-right: 8px;
+    }
+    .winningInfoCardReceiveMoney {
+      font-size: 15px;
+      color: black;
+      font-weight: 600;
+    }
+  }
+}
+
+// notification
+.notificationSec {
+  padding-top: 60px;
+  .notificationSecCol {
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    .notificationSecColHeading {
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .notificationSecColTime {
+      font-size: 13px;
+      color: $text-mutted-color;
+      margin-top: 2px;
+    }
+    .notificationSecFooter {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .deleteIcon {
+      color: $orange-color;
+    }
+  }
+}
+
+// media querry
+
+@media screen and (max-width: 500px) {
+  .homeHeader {
+    width: 100%;
+  }
+  .homeFooter {
+    width: 100%;
+  }
+  .home-game-category-items {
+    font-size: 11px !important;
+  }
+  .spinner-sec {
+    width: 100%;
+  }
+  .lottery-win-go-time-slap-card {
+    top: 310px;
+    left: 26px;
+  }
+  .win-go-history-button {
+    font-size: 12px;
+  }
+
+  .win-go-history-button-active {
+    font-size: 12px;
+  }
+  .history-card-heading {
+    font-size: 11px;
+  }
+  .history-card-content {
+    font-size: 9px;
+  }
+  .bottomOffCanvas {
+    width: 100%;
+  }
+  .game-menu-item-card-bottom-image-col {
+    font-size: 12px !important;
+  }
+
+  .winningInfoCardReceiveMoney {
+    font-size: 13px !important;
+  }
+  .winningInfoCardRow {
+    font-size: 12px;
+  }
+  .notificationSecColHeading {
+    font-size: 16px !important;
+  }
+  .notificationSecColTime {
+    font-size: 11px !important;
+  }
+  .notificationSecFooter {
+    font-size: 11px !important;
+  }
+}

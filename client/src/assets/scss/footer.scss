@@ -1,0 +1,138 @@
+@use "./variables.scss" as *;
+
+.footer-area {
+  background: radial-gradient(circle at top, $light-maroon, $darkest-maroon);
+  text-align: center;
+  position: relative;
+}
+
+/* Main Footer */
+.main-footer-area {
+  padding: 90px 0 60px;
+}
+
+/* Center Wrapper */
+.footer-center-wrapper {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Logo */
+.footer-logo img {
+  height: 110px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 12px rgba(255, 224, 130, 0.4));
+}
+
+/* Brand */
+.footer-brand {
+  color: $golden;
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.footer-subtitle {
+  color: #e5e5e5;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+/* Social */
+.social-info {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  // margin-bottom: 35px;
+
+  a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $maroon;
+    color: $golden;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $golden;
+      color: $dark-maroon;
+      transform: translateY(-4px);
+      box-shadow: 0 0 15px rgba(255, 224, 130, 0.6);
+    }
+  }
+}
+
+/* Contact */
+.footer-contact {
+  p {
+    color: #f1f1f1;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+
+    span {
+      color: $golden;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Scroll Button */
+.scrollUp {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: $golden;
+  color: $dark-maroon;
+  border: none;
+  z-index: 999;
+
+  &:hover {
+    background: $golden;
+  }
+}
+
+/* Bottom Footer */
+.footer-bottom-area {
+  background: $dark-maroon;
+  padding-top: 10px;
+}
+
+.border-line {
+  height: 1px;
+  background: $golden;
+  opacity: 0.6;
+}
+
+.copywrite-text {
+  padding: 20px 0;
+
+  p {
+    color: $golden;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  .link-web {
+    font-weight: 600;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .footer-logo img {
+    height: 90px;
+  }
+
+  .footer-brand {
+    font-size: 22px;
+  }
+}
